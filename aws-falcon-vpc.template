@@ -1,70 +1,70 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Metadata": {
-            "AWS::CloudFormation::Interface": {
-                "ParameterGroups": [
-                    {
-                        "Label": {
-                            "default": "VPC Configuration"
-                        },
-                        "Parameters": [
-                            "VPCTAG", "VPCCIDR"
-
-                        ]
+        "AWS::CloudFormation::Interface": {
+            "ParameterGroups": [
+                {
+                    "Label": {
+                        "default": "VPC Configuration"
                     },
-                    {
-                        "Label": {
-                            "default": "Subnets Configuration"
-                        },
-                        "Parameters": [
-                            "PublicACIDR",
-                            "PublicBCIDR",
-                            "PublicCCIDR",
-                            "NatedACIDR",
-                            "NatedBCIDR",
-                            "NatedCCIDR",
-                            "PrivateACIDR",
-                            "PrivateBCIDR",
-                            "PrivateCCIDR"
-                        ]
-                    }
-                ],
-                "ParameterLabels": {
-                    "VPCTAG": {
-                        "default": "VPC TAG"
+                    "Parameters": [
+                        "VPCTAG",
+                        "VPCCIDR"
+                    ]
+                },
+                {
+                    "Label": {
+                        "default": "Subnets Configuration"
                     },
-                    "VPCCIDR": {
-                        "default": "VPC CIDR"
-                    },
-                    "PublicACIDR": {
-                        "default": "Public Subnet CIDR in 1st Avalibility Zone"
-                    },
-                    "PublicBCIDR": {
-                        "default": "Public Subnet CIDR in 2nd Avalibility Zone"
-                    },
-                    "PublicCCIDR": {
-                        "default": "Public Subnet CIDR in 3rd Avalibility Zone"
-                    },
-                    "NatedACIDR": {
-                        "default": "Nated Subnet CIDR in 1st Avalibility Zone"
-                    },
-                    "NatedBCIDR": {
-                        "default": "Nated Subnet CIDR in 2nd Avalibility Zone"
-                    },
-                    "NatedCCIDR": {
-                        "default": "Nated Subnet CIDR in 3rd Avalibility Zone"
-                    },
-                    "PrivateACIDR": {
-                        "default": "Private Subnet CIDR in 1st Avalibility Zone"
-                    },
-                    "PrivateBCIDR": {
-                        "default": "Private Subnet CIDR in 2nd Avalibility Zone"
-                    },
-                    "PrivateCCIDR": {
-                        "default": "Private Subnet CIDR in 3rd Avalibility Zone"
-                    }
+                    "Parameters": [
+                        "PublicACIDR",
+                        "PublicBCIDR",
+                        "PublicCCIDR",
+                        "NatedACIDR",
+                        "NatedBCIDR",
+                        "NatedCCIDR",
+                        "PrivateACIDR",
+                        "PrivateBCIDR",
+                        "PrivateCCIDR"
+                    ]
                 }
-            },
+            ],
+            "ParameterLabels": {
+                "VPCTAG": {
+                    "default": "VPC TAG"
+                },
+                "VPCCIDR": {
+                    "default": "VPC CIDR"
+                },
+                "PublicACIDR": {
+                    "default": "Public Subnet CIDR in 1st Avalibility Zone"
+                },
+                "PublicBCIDR": {
+                    "default": "Public Subnet CIDR in 2nd Avalibility Zone"
+                },
+                "PublicCCIDR": {
+                    "default": "Public Subnet CIDR in 3rd Avalibility Zone"
+                },
+                "NatedACIDR": {
+                    "default": "Nated Subnet CIDR in 1st Avalibility Zone"
+                },
+                "NatedBCIDR": {
+                    "default": "Nated Subnet CIDR in 2nd Avalibility Zone"
+                },
+                "NatedCCIDR": {
+                    "default": "Nated Subnet CIDR in 3rd Avalibility Zone"
+                },
+                "PrivateACIDR": {
+                    "default": "Private Subnet CIDR in 1st Avalibility Zone"
+                },
+                "PrivateBCIDR": {
+                    "default": "Private Subnet CIDR in 2nd Avalibility Zone"
+                },
+                "PrivateCCIDR": {
+                    "default": "Private Subnet CIDR in 3rd Avalibility Zone"
+                }
+            }
+        },
         "AWS::CloudFormation::Designer": {
             "047026c0-a25f-4ef9-8bff-af360c4d8353": {
                 "size": {
@@ -210,47 +210,69 @@
     "Parameters": {
         "VPCCIDR": {
             "Type": "String",
-            "Default": "10.0.0.0/16"
+            "Default": "10.0.0.0/16",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-4]))$",
+            "ConstraintDescription": "VPC CIDR block parameter must be in the form x.x.x.x/16-24"
         },
         "VPCTAG": {
             "Type": "String",
-            "Default": "Production"
+            "Default": "Production",
+            "MinLength": "5",
+            "MaxLength": "16"
         },
         "PublicACIDR": {
             "Type": "String",
-            "Default": "10.0.11.0/24"
+            "Default": "10.0.11.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "PublicBCIDR": {
             "Type": "String",
-            "Default": "10.0.12.0/24"
+            "Default": "10.0.12.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "PublicCCIDR": {
             "Type": "String",
-            "Default": "10.0.13.0/24"
+            "Default": "10.0.13.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "NatedACIDR": {
             "Type": "String",
-            "Default": "10.0.21.0/24"
+            "Default": "10.0.21.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "NatedBCIDR": {
             "Type": "String",
-            "Default": "10.0.22.0/24"
+            "Default": "10.0.22.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "NatedCCIDR": {
             "Type": "String",
-            "Default": "10.0.23.0/24"
+            "Default": "10.0.23.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "PrivateACIDR": {
             "Type": "String",
-            "Default": "10.0.31.0/24"
+            "Default": "10.0.31.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "PrivateBCIDR": {
             "Type": "String",
-            "Default": "10.0.32.0/24"
+            "Default": "10.0.32.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         },
         "PrivateCCIDR": {
             "Type": "String",
-            "Default": "10.0.33.0/24"
+            "Default": "10.0.33.0/24",
+            "AllowedPattern": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(2[0-4]))$",
+            "ConstraintDescription": "Subnet CIDR block parameter must be in the form x.x.x.x/20-24"
         }
     },
     "Resources": {
