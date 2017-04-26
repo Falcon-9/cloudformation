@@ -1,0 +1,531 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "Metadata": {
+            "AWS::CloudFormation::Interface": {
+                "ParameterGroups": [
+                    {
+                        "Label": {
+                            "default": "VPC Configuration"
+                        },
+                        "Parameters": [
+                            "VPCCIDR",
+                            "VPCTAG"
+                        ]
+                    },
+                    {
+                        "Label": {
+                            "default": "Subnets Configuration"
+                        },
+                        "Parameters": [
+                            "PublicACIDR",
+                            "PublicBCIDR",
+                            "PublicCCIDR",
+                            "NatedACIDR",
+                            "NatedBCIDR",
+                            "NatedCCIDR",
+                            "PrivateACIDR",
+                            "PrivateBCIDR",
+                            "PrivateCCIDR"
+                        ]
+                    }
+                ],
+                "ParameterLabels": {
+                    "VPCCIDR": {
+                        "default": "VPC CIDR"
+                    },
+                    "VPCTAG": {
+                        "default": "VPC TAG"
+                    },
+                    "PublicACIDR": {
+                        "default": "Public Subnet CIDR in 1st Avalibility Zone"
+                    },
+                    "PublicBCIDR": {
+                        "default": "Public Subnet CIDR in 2nd Avalibility Zone"
+                    },
+                    "PublicCCIDR": {
+                        "default": "Public Subnet CIDR in 3rd Avalibility Zone"
+                    },
+                    "NatedACIDR": {
+                        "default": "Nated Subnet CIDR in 1st Avalibility Zone"
+                    },
+                    "NatedBCIDR": {
+                        "default": "Nated Subnet CIDR in 2nd Avalibility Zone"
+                    },
+                    "NatedCCIDR": {
+                        "default": "Nated Subnet CIDR in 3rd Avalibility Zone"
+                    },
+                    "PrivateACIDR": {
+                        "default": "Private Subnet CIDR in 1st Avalibility Zone"
+                    },
+                    "PrivateBCIDR": {
+                        "default": "Private Subnet CIDR in 2nd Avalibility Zone"
+                    },
+                    "PrivateCCIDR": {
+                        "default": "Private Subnet CIDR in 3rd Avalibility Zone"
+                    }
+                }
+            }
+        },
+        "AWS::CloudFormation::Designer": {
+            "047026c0-a25f-4ef9-8bff-af360c4d8353": {
+                "size": {
+                    "width": 950,
+                    "height": 470
+                },
+                "position": {
+                    "x": 30,
+                    "y": 30
+                },
+                "z": 0,
+                "embeds": [
+                    "890bc488-23d6-4378-9e89-bb7b4f80fef9",
+                    "9f2b861d-9abd-493b-bb71-d43847645a60",
+                    "e72954f0-c1c7-40f9-a74b-6398fe4ae89b",
+                    "7531a70f-3c0a-470a-96fc-8689ba16c1ea",
+                    "fdfc0308-99f5-47e1-9606-c9fa3172ef48",
+                    "0a2b5c08-f83b-4511-9aff-9701e672f57c",
+                    "60ca1632-c5a8-4262-96ca-0e5b742d0225",
+                    "af055845-182f-4f38-8d1e-4f3d19088804",
+                    "b3ba480a-c033-422e-bb41-04a2fe2e4c16"
+                ]
+            },
+            "b3ba480a-c033-422e-bb41-04a2fe2e4c16": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 48,
+                    "y": 70
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "af055845-182f-4f38-8d1e-4f3d19088804": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 288,
+                    "y": 70
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "60ca1632-c5a8-4262-96ca-0e5b742d0225": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 518,
+                    "y": 70
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "0a2b5c08-f83b-4511-9aff-9701e672f57c": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 50,
+                    "y": 200
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "fdfc0308-99f5-47e1-9606-c9fa3172ef48": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 290,
+                    "y": 200
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "7531a70f-3c0a-470a-96fc-8689ba16c1ea": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 520,
+                    "y": 200
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "e72954f0-c1c7-40f9-a74b-6398fe4ae89b": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 50,
+                    "y": 330
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "9f2b861d-9abd-493b-bb71-d43847645a60": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 290,
+                    "y": 330
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            },
+            "890bc488-23d6-4378-9e89-bb7b4f80fef9": {
+                "size": {
+                    "width": 90,
+                    "height": 91
+                },
+                "position": {
+                    "x": 520,
+                    "y": 330
+                },
+                "z": 1,
+                "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
+                "embeds": []
+            }
+        }
+    },
+    "Parameters": {
+        "VPCCIDR": {
+            "Type": "String",
+            "Default": "10.0.0.0/16"
+        },
+        "VPCTAG": {
+            "Type": "String",
+            "Default": "Production"
+        },
+        "PublicACIDR": {
+            "Type": "String",
+            "Default": "10.0.11.0/24"
+        },
+        "PublicBCIDR": {
+            "Type": "String",
+            "Default": "10.0.12.0/24"
+        },
+        "PublicCCIDR": {
+            "Type": "String",
+            "Default": "10.0.13.0/24"
+        },
+        "NatedACIDR": {
+            "Type": "String",
+            "Default": "10.0.21.0/24"
+        },
+        "NatedBCIDR": {
+            "Type": "String",
+            "Default": "10.0.22.0/24"
+        },
+        "NatedCCIDR": {
+            "Type": "String",
+            "Default": "10.0.23.0/24"
+        },
+        "PrivateACIDR": {
+            "Type": "String",
+            "Default": "10.0.31.0/24"
+        },
+        "PrivateBCIDR": {
+            "Type": "String",
+            "Default": "10.0.32.0/24"
+        },
+        "PrivateCCIDR": {
+            "Type": "String",
+            "Default": "10.0.33.0/24"
+        }
+    },
+    "Resources": {
+        "EC2VPCAXFB": {
+            "Type": "AWS::EC2::VPC",
+            "Properties": {
+                "CidrBlock": {
+                    "Ref": "VPCCIDR"
+                },
+                "Tags": {
+                    "Key": "",
+                    "Value": {
+                        "Ref": "VPCTAG"
+                    }
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "047026c0-a25f-4ef9-8bff-af360c4d8353"
+                }
+            }
+        },
+        "EC2S4FRKZ": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "PublicACIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "0",
+                        {
+                            "Fn::GetAZs": ""
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Public-a"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b3ba480a-c033-422e-bb41-04a2fe2e4c16"
+                }
+            }
+        },
+        "EC2S52INN": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "PublicBCIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "1",
+                        {
+                            "Fn::GetAZs": ""
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Public-b"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "af055845-182f-4f38-8d1e-4f3d19088804"
+                }
+            }
+        },
+        "EC2S4Y95J": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "PublicCCIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "2",
+                        {
+                            "Fn::GetAZs": ""
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Public-c"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "60ca1632-c5a8-4262-96ca-0e5b742d0225"
+                }
+            }
+        },
+        "EC2S1PQOD": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "NatedACIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "0",
+                        {
+                            "Fn::GetAZs": ""
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Nated-a"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "0a2b5c08-f83b-4511-9aff-9701e672f57c"
+                }
+            }
+        },
+        "EC2S4HTQ1": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "NatedBCIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "1",
+                        {
+                            "Fn::GetAZs": ""
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Nated-b"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "fdfc0308-99f5-47e1-9606-c9fa3172ef48"
+                }
+            }
+        },
+        "EC2SLF2E": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "NatedCCIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "2",
+                        {
+                            "Fn::GetAZs": ""
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Nated-c"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "7531a70f-3c0a-470a-96fc-8689ba16c1ea"
+                }
+            }
+        },
+        "EC2S4XMF5": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "PrivateACIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "0",
+                        {
+                            "Fn::GetAZs": ""
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Private-a"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "e72954f0-c1c7-40f9-a74b-6398fe4ae89b"
+                }
+            }
+        },
+        "EC2S4L944": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "PrivateBCIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "1",
+                        {
+                            "Fn::GetAZs": "region_name"
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Private-b"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "9f2b861d-9abd-493b-bb71-d43847645a60"
+                }
+            }
+        },
+        "EC2S2PM2A": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "EC2VPCAXFB"
+                },
+                "CidrBlock": {
+                    "Ref": "PrivateCCIDR"
+                },
+                "AvailabilityZone": {
+                    "Fn::Select": [
+                        "2",
+                        {
+                            "Fn::GetAZs": "region_name"
+                        }
+                    ]
+                },
+                "Tags": {
+                    "Key": "Name",
+                    "Value": "Private-c"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "890bc488-23d6-4378-9e89-bb7b4f80fef9"
+                }
+            }
+        }
+    }
+}
