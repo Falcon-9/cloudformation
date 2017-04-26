@@ -1,7 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Metadata": {
-        "Metadata": {
             "AWS::CloudFormation::Interface": {
                 "ParameterGroups": [
                     {
@@ -9,8 +8,8 @@
                             "default": "VPC Configuration"
                         },
                         "Parameters": [
-                            "VPCCIDR",
-                            "VPCTAG"
+                            "VPCTAG", "VPCCIDR"
+
                         ]
                     },
                     {
@@ -31,11 +30,11 @@
                     }
                 ],
                 "ParameterLabels": {
-                    "VPCCIDR": {
-                        "default": "VPC CIDR"
-                    },
                     "VPCTAG": {
                         "default": "VPC TAG"
+                    },
+                    "VPCCIDR": {
+                        "default": "VPC CIDR"
                     },
                     "PublicACIDR": {
                         "default": "Public Subnet CIDR in 1st Avalibility Zone"
@@ -65,8 +64,7 @@
                         "default": "Private Subnet CIDR in 3rd Avalibility Zone"
                     }
                 }
-            }
-        },
+            },
         "AWS::CloudFormation::Designer": {
             "047026c0-a25f-4ef9-8bff-af360c4d8353": {
                 "size": {
