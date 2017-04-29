@@ -72,8 +72,8 @@
                     "height": 670
                 },
                 "position": {
-                    "x": 150,
-                    "y": 440
+                    "x": -50,
+                    "y": 540
                 },
                 "z": 0,
                 "embeds": [
@@ -97,8 +97,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 178,
-                    "y": 480
+                    "x": -22,
+                    "y": 580
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -113,8 +113,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 418,
-                    "y": 480
+                    "x": 218,
+                    "y": 580
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -129,8 +129,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 648,
-                    "y": 480
+                    "x": 448,
+                    "y": 580
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -145,8 +145,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 180,
-                    "y": 610
+                    "x": -20,
+                    "y": 710
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -161,8 +161,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 420,
-                    "y": 610
+                    "x": 220,
+                    "y": 710
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -177,8 +177,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 650,
-                    "y": 610
+                    "x": 450,
+                    "y": 710
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -193,8 +193,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 180,
-                    "y": 740
+                    "x": -20,
+                    "y": 840
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -209,8 +209,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 420,
-                    "y": 740
+                    "x": 220,
+                    "y": 840
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -225,8 +225,8 @@
                     "height": 91
                 },
                 "position": {
-                    "x": 650,
-                    "y": 740
+                    "x": 450,
+                    "y": 840
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -241,12 +241,14 @@
                     "height": 140
                 },
                 "position": {
-                    "x": 920,
-                    "y": 490
+                    "x": 720,
+                    "y": 590
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
-                "embeds": [],
+                "embeds": [
+                    "bf5a467e-67e5-42a6-8232-e1c81341701d"
+                ],
                 "dependson": [
                     "047026c0-a25f-4ef9-8bff-af360c4d8353",
                     "60ca1632-c5a8-4262-96ca-0e5b742d0225",
@@ -260,8 +262,8 @@
                     "height": 140
                 },
                 "position": {
-                    "x": 920,
-                    "y": 700
+                    "x": 720,
+                    "y": 800
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -279,8 +281,8 @@
                     "height": 140
                 },
                 "position": {
-                    "x": 920,
-                    "y": 920
+                    "x": 720,
+                    "y": 1020
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
@@ -511,6 +513,40 @@
                     "id": "b3ba480a-c033-422e-bb41-04a2fe2e4c16"
                 },
                 "z": 1
+            },
+            "a425d434-6d0b-43a8-89ff-b37b139e7a1a": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1130,
+                    "y": 600
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "6d150fa9-921a-482e-9b82-dde5230475ac": {
+                "source": {
+                    "id": "a425d434-6d0b-43a8-89ff-b37b139e7a1a"
+                },
+                "target": {
+                    "id": "047026c0-a25f-4ef9-8bff-af360c4d8353"
+                },
+                "z": 0
+            },
+            "bf5a467e-67e5-42a6-8232-e1c81341701d": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 760,
+                    "y": 620
+                },
+                "z": 2,
+                "parent": "8d430efa-1418-4a9b-978b-7a1837758ab8",
+                "embeds": []
             }
         }
     },
@@ -622,10 +658,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Public-a"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Public-a"
+                    }
                 ]
             },
             "Metadata": {
@@ -655,10 +691,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Public-b"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Public-b"
+                    }
                 ]
             },
             "Metadata": {
@@ -688,10 +724,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Public-c"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Public-c"
+                    }
                 ]
             },
             "Metadata": {
@@ -721,10 +757,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Nated-a"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Nated-a"
+                    }
                 ]
             },
             "Metadata": {
@@ -754,10 +790,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Nated-b"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Nated-b"
+                    }
                 ]
             },
             "Metadata": {
@@ -787,10 +823,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Nated-c"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Nated-c"
+                    }
                 ]
             },
             "Metadata": {
@@ -820,10 +856,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Private-a"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Private-a"
+                    }
                 ]
             },
             "Metadata": {
@@ -853,10 +889,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Private-b"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Private-b"
+                    }
                 ]
             },
             "Metadata": {
@@ -886,10 +922,10 @@
                     ]
                 },
                 "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "Private-c"
-                }
+                    {
+                        "Key": "Name",
+                        "Value": "Private-c"
+                    }
                 ]
             },
             "Metadata": {
@@ -961,8 +997,12 @@
         "PublicaRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": {"Ref" : "PublicRoute"},
-                "SubnetId": { "Ref" : "PublicaSubnet" }
+                "RouteTableId": {
+                    "Ref": "PublicRoute"
+                },
+                "SubnetId": {
+                    "Ref": "PublicaSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -978,8 +1018,12 @@
         "PublicbRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "PublicRoute" },
-                "SubnetId": { "Ref" : "PublicbSubnet" }
+                "RouteTableId": {
+                    "Ref": "PublicRoute"
+                },
+                "SubnetId": {
+                    "Ref": "PublicbSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -995,8 +1039,12 @@
         "PubliccRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "PublicRoute" },
-                "SubnetId": { "Ref" : "PubliccSubnet" }
+                "RouteTableId": {
+                    "Ref": "PublicRoute"
+                },
+                "SubnetId": {
+                    "Ref": "PubliccSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1012,8 +1060,12 @@
         "NatedaRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "NatedRoute" },
-                "SubnetId": { "Ref" : "NatedaSubnet" }
+                "RouteTableId": {
+                    "Ref": "NatedRoute"
+                },
+                "SubnetId": {
+                    "Ref": "NatedaSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1029,8 +1081,12 @@
         "NatedbRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "NatedRoute" },
-                "SubnetId": { "Ref" : "NatedbSubnet" }
+                "RouteTableId": {
+                    "Ref": "NatedRoute"
+                },
+                "SubnetId": {
+                    "Ref": "NatedbSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1046,8 +1102,12 @@
         "NatedcRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "NatedRoute" },
-                "SubnetId": { "Ref" : "NatedcSubnet" }
+                "RouteTableId": {
+                    "Ref": "NatedRoute"
+                },
+                "SubnetId": {
+                    "Ref": "NatedcSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1063,8 +1123,12 @@
         "PrivateaRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "PrivateRoute" },
-                "SubnetId": { "Ref" : "PrivateaSubnet" }
+                "RouteTableId": {
+                    "Ref": "PrivateRoute"
+                },
+                "SubnetId": {
+                    "Ref": "PrivateaSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1080,8 +1144,12 @@
         "PrivatebRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "PrivateRoute" },
-                "SubnetId": { "Ref" : "PrivatebSubnet" }
+                "RouteTableId": {
+                    "Ref": "PrivateRoute"
+                },
+                "SubnetId": {
+                    "Ref": "PrivatebSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1097,8 +1165,12 @@
         "PrivatecRouting": {
             "Type": "AWS::EC2::SubnetRouteTableAssociation",
             "Properties": {
-                "RouteTableId": { "Ref" : "PrivateRoute" },
-                "SubnetId": { "Ref" : "PrivatecSubnet" }
+                "RouteTableId": {
+                    "Ref": "PrivateRoute"
+                },
+                "SubnetId": {
+                    "Ref": "PrivatecSubnet"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1110,6 +1182,46 @@
                 "PrivateRoute",
                 "PrivatecSubnet"
             ]
+        },
+        "MYVPC1IGW": {
+            "Type": "AWS::EC2::InternetGateway",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "a425d434-6d0b-43a8-89ff-b37b139e7a1a"
+                }
+            }
+        },
+        "VPC2IGW": {
+            "Type": "AWS::EC2::VPCGatewayAttachment",
+            "Properties": {
+                "InternetGatewayId": {
+                    "Ref": "MYVPC1IGW"
+                },
+                "VpcId": {
+                    "Ref": "MYVPC"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6d150fa9-921a-482e-9b82-dde5230475ac"
+                }
+            }
+        },
+        "IGW2PublicRoute": {
+            "Type": "AWS::EC2::Route",
+            "Properties": {
+                "RouteTableId": {
+                    "Ref": "PublicRoute"
+                },
+                "DestinationCidrBlock": "0.0.0.0/0",
+                "GatewayId": {"Ref" : "MYVPC1IGW" }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "bf5a467e-67e5-42a6-8232-e1c81341701d"
+                }
+            }
         }
     }
 }
