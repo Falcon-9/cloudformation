@@ -8,7 +8,6 @@
                         "default": "VPC Configuration"
                     },
                     "Parameters": [
-                        "VPCTAG",
                         "VPCCIDR"
                     ]
                 },
@@ -30,9 +29,6 @@
                 }
             ],
             "ParameterLabels": {
-                "VPCTAG": {
-                    "default": "VPC TAG"
-                },
                 "VPCCIDR": {
                     "default": "VPC CIDR"
                 },
@@ -134,7 +130,9 @@
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
-                "embeds": [],
+                "embeds": [
+                    "4e132802-4b6d-4d3a-bc5f-2c9dbf5bccd3"
+                ],
                 "dependson": [
                     "047026c0-a25f-4ef9-8bff-af360c4d8353"
                 ]
@@ -286,7 +284,9 @@
                 },
                 "z": 1,
                 "parent": "047026c0-a25f-4ef9-8bff-af360c4d8353",
-                "embeds": [],
+                "embeds": [
+                    "65e8e7ed-fcbf-41da-a621-0b4a0072f2f0"
+                ],
                 "dependson": [
                     "047026c0-a25f-4ef9-8bff-af360c4d8353",
                     "890bc488-23d6-4378-9e89-bb7b4f80fef9",
@@ -546,7 +546,50 @@
                 },
                 "z": 2,
                 "parent": "8d430efa-1418-4a9b-978b-7a1837758ab8",
+                "embeds": [],
+                "references": [
+                    "a425d434-6d0b-43a8-89ff-b37b139e7a1a"
+                ]
+            },
+            "4e132802-4b6d-4d3a-bc5f-2c9dbf5bccd3": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 460,
+                    "y": 600
+                },
+                "z": 2,
+                "parent": "60ca1632-c5a8-4262-96ca-0e5b742d0225",
+                "embeds": [],
+                "isrelatedto": [
+                    "da1da3be-4abb-426c-b943-9f1f5a17310c"
+                ]
+            },
+            "da1da3be-4abb-426c-b943-9f1f5a17310c": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1020.9866413946439,
+                    "y": 784.2397493588517
+                },
+                "z": 0,
                 "embeds": []
+            },
+            "65e8e7ed-fcbf-41da-a621-0b4a0072f2f0": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 742.3996971462217,
+                    "y": 1059.2397007551533
+                },
+                "z": 2,
+                "parent": "0368a4b2-0aef-4d1e-8855-4b42299915ef"
             }
         }
     },
@@ -625,6 +668,8 @@
                 "CidrBlock": {
                     "Ref": "VPCCIDR"
                 },
+                "EnableDnsSupport": "true",
+                "EnableDnsHostnames": "true",
                 "Tags": [
                     {
                         "Key": "Name",
@@ -942,7 +987,12 @@
             "Properties": {
                 "VpcId": {
                     "Ref": "MYVPC"
-                }
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "Public-Route"
+                    } ]
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -961,7 +1011,12 @@
             "Properties": {
                 "VpcId": {
                     "Ref": "MYVPC"
-                }
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "Nated-Route"
+                    } ]
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -980,7 +1035,12 @@
             "Properties": {
                 "VpcId": {
                     "Ref": "MYVPC"
-                }
+                },
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "Private-Route"
+                    } ]
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
@@ -1215,11 +1275,56 @@
                     "Ref": "PublicRoute"
                 },
                 "DestinationCidrBlock": "0.0.0.0/0",
-                "GatewayId": {"Ref" : "MYVPC1IGW" }
+                "GatewayId": {
+                    "Ref": "MYVPC1IGW"
+                }
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
                     "id": "bf5a467e-67e5-42a6-8232-e1c81341701d"
+                }
+            }
+        },
+        "NATGW": {
+            "Type": "AWS::EC2::NatGateway",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "PubliccSubnet"
+                },
+                "AllocationId": {
+                "Fn::GetAtt": [
+                    "NATGWEIP",
+                    "AllocationId"
+                ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "4e132802-4b6d-4d3a-bc5f-2c9dbf5bccd3"
+                }
+            }
+        },
+        "NATGWEIP": {
+            "Type": "AWS::EC2::EIP",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "da1da3be-4abb-426c-b943-9f1f5a17310c"
+                }
+            }
+        },
+        "Private2NATGWRoute": {
+            "Type": "AWS::EC2::Route",
+            "Properties": {
+                "RouteTableId": {
+                    "Ref": "PrivateRoute"
+                },
+                "DestinationCidrBlock" : "0.0.0.0/0",
+                "NatGatewayId" : { "Ref" : "NATGW" }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "65e8e7ed-fcbf-41da-a621-0b4a0072f2f0"
                 }
             }
         }
